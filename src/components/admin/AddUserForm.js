@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { getIdToken } from "@/lib/client/clientAuthService";
+import "../admin/style/AddUserForm.css"; // ✅ Import CSS
 
 export default function AddUserForm({ onUserCreated }) {
   const [form, setForm] = useState({
@@ -11,7 +12,7 @@ export default function AddUserForm({ onUserCreated }) {
     lastName: "",
     dob: "",
     licenceNo: "",
-    phone:"",
+    phone: "",
   });
   const [status, setStatus] = useState("");
 
@@ -24,7 +25,7 @@ export default function AddUserForm({ onUserCreated }) {
     setStatus("Creating user...");
 
     try {
-      const token = await getIdToken(); // ✅ safe wrapper
+      const token = await getIdToken();
       if (!token) {
         setStatus("⚠️ Not logged in as admin");
         return;
@@ -50,14 +51,11 @@ export default function AddUserForm({ onUserCreated }) {
         lastName: "",
         dob: "",
         licenceNo: "",
-        phone:"",
+        phone: "",
       });
-      
-      // Call the callback to refresh the user list and close modal
+
       if (onUserCreated) {
-        setTimeout(() => {
-          onUserCreated();
-        }, 1500); // Give user time to see success message
+        setTimeout(() => onUserCreated(), 1500);
       }
     } catch (err) {
       setStatus(`⚠️ ${err.message}`);
@@ -66,9 +64,9 @@ export default function AddUserForm({ onUserCreated }) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="form-grid">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+          <label className="form-label">Email *</label>
           <input
             name="email"
             type="email"
@@ -76,11 +74,11 @@ export default function AddUserForm({ onUserCreated }) {
             value={form.email}
             onChange={handleChange}
             required
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
+            className="form-input"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Password *</label>
+          <label className="form-label">Password *</label>
           <input
             type="password"
             name="password"
@@ -88,64 +86,64 @@ export default function AddUserForm({ onUserCreated }) {
             value={form.password}
             onChange={handleChange}
             required
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
+            className="form-input"
           />
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="form-grid">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+          <label className="form-label">First Name</label>
           <input
             name="firstName"
             placeholder="John"
             value={form.firstName}
             onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
+            className="form-input"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+          <label className="form-label">Last Name</label>
           <input
             name="lastName"
             placeholder="Doe"
             value={form.lastName}
             onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
+            className="form-input"
           />
         </div>
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">Date of Birth</label>
+        <label className="form-label">Date of Birth</label>
         <input
           type="date"
           name="dob"
           value={form.dob}
           onChange={handleChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
+          className="form-input"
         />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="form-grid">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Licence Number</label>
+          <label className="form-label">Licence Number</label>
           <input
             name="licenceNo"
             placeholder="ABC123456"
             value={form.licenceNo}
             onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
+            className="form-input"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+          <label className="form-label">Phone Number</label>
           <input
             name="phone"
             placeholder="+44 1234 567890"
             value={form.phone}
             onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
+            className="form-input"
           />
         </div>
       </div>
@@ -154,24 +152,17 @@ export default function AddUserForm({ onUserCreated }) {
         <button
           type="button"
           onClick={() => onUserCreated && onUserCreated()}
-          className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+          className="form-btn form-btn-cancel"
         >
           Cancel
         </button>
-        <button
-          type="submit"
-          className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
-        >
+        <button type="submit" className="form-btn form-btn-primary">
           Add User
         </button>
       </div>
 
       {status && (
-        <div className={`p-3 rounded-lg text-sm ${
-          status.includes('✅') 
-            ? 'bg-green-100 text-green-800' 
-            : 'bg-red-100 text-red-800'
-        }`}>
+        <div className={status.includes("✅") ? "status-success" : "status-error"}>
           {status}
         </div>
       )}
