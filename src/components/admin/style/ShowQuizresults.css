@@ -1,0 +1,76 @@
+/* ShowQuizResults.css */
+
+/* Layout Containers */
+.page-container {
+  @apply max-w-7xl mx-auto py-8;
+}
+
+.search-container {
+  @apply bg-white rounded-lg shadow-sm border p-6 mb-6 grid grid-cols-1 md:grid-cols-3 gap-4;
+}
+
+.search-input {
+  @apply border rounded-lg px-3 py-2;
+}
+
+.search-select {
+  @apply border rounded-lg px-3 py-2;
+}
+
+.search-button {
+  @apply bg-blue-500 text-white px-3 py-2 rounded-lg;
+}
+
+.clear-button {
+  @apply border px-3 py-2 rounded-lg;
+}
+
+/* Table Container */
+.table-container {
+  @apply bg-white shadow-sm rounded-lg border;
+}
+
+.table-header {
+  @apply px-6 py-4 border-b;
+}
+
+.table-title {
+  @apply font-semibold text-lg;
+}
+
+.table {
+  @apply min-w-full divide-y divide-gray-200;
+}
+
+.table-head {
+  @apply bg-gray-50;
+}
+
+.table-head-cell {
+  @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+}
+
+.table-row {
+  @apply hover:bg-gray-50;
+}
+
+.table-cell {
+  @apply px-6 py-4 text-sm;
+}
+
+/* Badges */
+.badge-excellent {
+  @apply px-2 py-1 rounded-full text-xs bg-green-100 text-green-800;
+}
+.badge-good {
+  @apply px-2 py-1 rounded-full text-xs bg-blue-100 text-blue-800;
+}
+.badge-average {
+  @apply px-2 py-1 rounded-full text-xs bg-yellow-100 text-yellow-800;
+}
+.badge-poor {
+  @apply px-2 py-1 rounded-full text-xs bg-red-100 text-red-800;
+}
+.page-title {
+  @apply text-2xl font-bold mb-6 text-center text-gray-800;
+}

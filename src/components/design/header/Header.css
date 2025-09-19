@@ -1,0 +1,53 @@
+.main-header {
+  background-color: #f1cf45;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-header h1 {
+  color: red;
+  text-align: center;
+  flex: 1;
+}
+
+.logo img {
+  max-width: 120px;
+  width: 100%;
+  height: auto;
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #333;
+}
+
+/* Highlight Sign Up */
+.signup-btn {
+  background: rgb(15, 15, 15);
+  color: #f1cf45;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.signup-btn:hover {
+  background: #333;
+  color: white;
+}

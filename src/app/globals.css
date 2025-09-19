@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  line-height: 1.6;
+  color: #374151;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
+}
+
+.btn-secondary {
+  @apply bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
+}
+
+/* Custom text styles */
+.text-primary {
+  color: var(--primary-red);
+}
+
+.text-accent {
+  color: var(--accent-yellow);
+}
+
+/* Hero section background */
+.hero-bg {
+  background: linear-gradient(135deg, #fef3c7 0%, #fbbf24 100%);
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+  .text-responsive-xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+@media (min-width: 641px) {
+  .text-responsive-xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* React Calendar Custom Styles */
+.react-calendar {
+  @apply bg-white border border-gray-200 rounded-lg shadow-sm;
+  width: 100%;
+  max-width: 500px;
+  font-family: inherit;
+}
+
+.react-calendar__navigation {
+  @apply flex justify-between items-center p-4 border-b border-gray-200;
+}
+
+.react-calendar__navigation button {
+  @apply p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors;
+  min-width: 40px;
+}
+
+.react-calendar__navigation button:disabled {
+  @apply text-gray-400 cursor-not-allowed;
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  @apply bg-gray-100;
+}
+
+.react-calendar__month-view__weekdays {
+  @apply text-center text-sm font-medium text-gray-500 py-2;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  @apply p-2;
+}
+
+.react-calendar__month-view__days {
+  @apply p-2;
+}
+
+.react-calendar__tile {
+  @apply p-3 text-center text-sm border-0 bg-transparent hover:bg-gray-100 rounded-lg transition-colors;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  @apply bg-gray-100;
+}
+
+.react-calendar__tile--now {
+  @apply bg-blue-100 text-blue-900 font-semibold;
+}
+
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
+  @apply bg-blue-200;
+}
+
+.react-calendar__tile--active {
+  @apply bg-yellow-200 text-yellow-900 font-semibold;
+}
+
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+  @apply bg-yellow-300;
+}
+
+.react-calendar__tile--weekend {
+  @apply text-red-500;
+}
+
+.react-calendar__tile--neighboringMonth {
+  @apply text-gray-400;
+}
