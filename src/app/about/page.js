@@ -1,6 +1,10 @@
+
 import Link from "next/link";
+import ReadMoreSection from "../../components/readMore/ReadMore";
+
 
 export const metadata = {
+ 
   title: "About Bogdan - Professional Driving Instructor | Bogdan's Driving School",
   description: "Meet Bogdan Crisan, your experienced driving instructor with over 15 years of teaching experience. Specialized in teaching people with disabilities, patient approach, and 5-level lesson structure. Based in South London.",
   keywords: "driving instructor, Bogdan Crisan, driving teacher, South London, professional driving instruction, driving lessons, experienced instructor, patient teacher, disability driving lessons",
@@ -12,6 +16,7 @@ export const metadata = {
 };
 
 export default function About() {
+   
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -66,6 +71,11 @@ export default function About() {
                   I take full responsibility for the learning experience and strive to create a positive environment 
                   where mistakes are seen as learning opportunities.
                 </p>
+                <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ReadMoreSection/>
+        </div>
+      </section>
               </div>
 
               {/* Lesson Structure */}
@@ -100,14 +110,28 @@ export default function About() {
               {/* Main Portrait */}
               <div className="text-center">
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+                  src="/about/squere%20size%20image.jpg" 
                   alt="Bogdan Crisan - Driving Instructor" 
                   className="w-80 h-80 object-cover rounded-lg shadow-lg mx-auto"
                 />
+               {/* <img 
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+                  alt="Bogdan Crisan - Driving Instructor" 
+                  class="w-80 h-80 object-cover rounded-lg shadow-lg mx-auto"
+                />*/}
                 <p className="text-gray-600 mt-4 italic">Bogdan Crisan - Your Driving Instructor</p>
               </div>
 
               {/* Lesson Photo */}
+              <div className="text-center">
+                <img 
+                  src="/about/BogdanandRobBeckett.png" 
+                  alt="Bogdan and Rob Beckett" 
+                  className="w-full h-64 object-cover rounded-lg shadow-lg"
+                />
+                <p className="text-gray-600 mt-2 italic">Patient instruction in action</p>
+              </div>
+
               <div className="text-center">
                 <img 
                   src="/london.png" 
@@ -132,12 +156,12 @@ export default function About() {
             <div className="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
               <div className="flex items-center mb-4">
                 <img 
-                  src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" 
+                    src="/about/testimonialAlex.jpg"
                   alt="Student testimonial" 
                   className="w-12 h-12 rounded-full mr-4"
                 />
                 <div>
-                  <h4 className="font-semibold text-gray-900">Sarah M.</h4>
+                  <h4 className="font-semibold text-gray-900">Alex P.</h4>
                   <p className="text-sm text-gray-600">Passed First Time</p>
                 </div>
               </div>
@@ -151,12 +175,12 @@ export default function About() {
             <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
               <div className="flex items-center mb-4">
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" 
+                  src="about/ElenaC.jpg" 
                   alt="Student testimonial" 
                   className="w-12 h-12 rounded-full mr-4"
                 />
                 <div>
-                  <h4 className="font-semibold text-gray-900">James L.</h4>
+                  <h4 className="font-semibold text-gray-900">Elena C.</h4>
                   <p className="text-sm text-gray-600">Confident Driver</p>
                 </div>
               </div>
@@ -208,7 +232,7 @@ export default function About() {
           </h2>
           <p className="text-xl text-red-100 mb-8 max-w-2xl mx-auto">
             Ready to begin your driving journey? Contact me for any lesson type. 
-            I'm flexible and can arrange lessons with other qualified instructors if I'm unavailable.
+            I'm flexible and will work with you to arrange lessons at a time that suits you.
           </p>
           <Link 
             href="/calendar" 
@@ -217,7 +241,7 @@ export default function About() {
             Get Lesson Prices and Book
           </Link>
           <p className="text-red-200 text-sm mt-4 italic">
-            Redirect to the calendar/book a slot
+
           </p>
         </div>
       </section>
@@ -228,8 +252,8 @@ export default function About() {
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Success Stories
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {Array.from({ length: 12 }, (_, index) => (
+          {/*<div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {Array.from({ length: 6 }, (_, index) => (
               <div key={index} className="aspect-square bg-gray-200 rounded-lg overflow-hidden">
                 <img 
                   src={`https://images.unsplash.com/photo-${1500000000000 + index * 1000000}?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80`}
@@ -238,7 +262,35 @@ export default function About() {
                 />
               </div>
             ))}
-          </div>
+          </div>*/}
+                  <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          {[
+            { src: "about//students/student1.jpg", name: "Frase D.", comment: "Passed first time!" },
+            { src: "about/students/student2.jpg", name: "Diana S.", comment: "Great instructor." },
+            { src: "about/students/student3.jpg", name: "George B.", comment: "I feel so confident now." },
+            { src: "about/students/student4.jpg", name: "Rachel T.", comment: "Best lessons ever!" },
+            { src: "about/students/student5.jpg", name: "Daisys R.", comment: "Very professional approach." },
+            { src: "about/students/student6.jpg", name: "Tony L.", comment: "Highly recommend!" }
+          ].map((student, index) => (
+            <div key={index} className="bg-gray-200 rounded-lg overflow-hidden flex flex-col">
+              {/* Image */}
+              <div className="aspect-square overflow-hidden">
+                <img
+                  src={student.src}
+                    alt={`${student.name} - successful student passing driving licence`}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-200"
+                />
+              </div>
+
+              {/* Comment section */}
+              <div className="p-2 text-center bg-white">
+                <p className="font-semibold text-gray-900">{student.name}</p>
+                <p className="text-sm text-gray-600">{student.comment}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
           <p className="text-center text-gray-600 mt-8 italic">
             Over 15 years of helping students achieve their driving goals
           </p>

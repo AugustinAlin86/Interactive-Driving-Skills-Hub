@@ -35,7 +35,7 @@ export default function Home() {
             <div className="order-2 lg:order-1">
               <div className="relative">
                 <img 
-                  src="/london.png" 
+                  src="/home/cars.jpg" 
                   alt="Driving lesson in progress" 
                   className="rounded-lg shadow-2xl w-full h-96 object-cover"
                 />
@@ -60,7 +60,7 @@ export default function Home() {
                   Get lesson prices and book
                 </Link>
                 <p className="text-sm text-gray-600 italic">
-                  "redirect to book a slot calendar"
+        
                 </p>
               </div>
             </div>
@@ -109,12 +109,12 @@ export default function Home() {
                 We are ready to answer your questions
               </p>
               <p className="text-sm text-gray-500 italic">
-                "redirect to contact us"
+            
               </p>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/*<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <input
                     type="text"
                     placeholder="Name"
@@ -134,9 +134,16 @@ export default function Home() {
                 <button
                   type="submit"
                   className="w-full btn-primary text-lg py-4"
+                    onClick={() => window.location.href = "/contact"}
                 >
                   REQUEST QUOTE
-                </button>
+                </button>*/}
+                <Link
+                   href="/contact"
+                   className="w-full btn-primary text-lg py-4 inline-block text-center"
+                >
+                  REQUEST QUOTE / SEND US A MESSAGE.
+                </Link>
               </form>
             </div>
           </div>
@@ -154,12 +161,12 @@ export default function Home() {
             <div className="bg-gray-50 p-6 rounded-lg">
               <div className="flex items-center mb-4">
                 <img 
-                  src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" 
-                  alt="Oana Crisan" 
+                  src="/home/Oana-C.jpg"
+                  alt="Oana C learner" 
                   className="w-12 h-12 rounded-full mr-4"
                 />
                 <div>
-                  <h4 className="font-semibold text-gray-900">Oana Crisan</h4>
+                  <h4 className="font-semibold text-gray-900">Oana C.</h4>
                   <p className="text-sm text-gray-600">1 martie 2019</p>
                 </div>
               </div>
@@ -168,11 +175,11 @@ export default function Home() {
               </p>
               <div className="flex items-center justify-between">
                 <span className="text-sm text-gray-600">Bogdan's Driving School</span>
-                <div className="flex space-x-2">
+               {/* <div className="flex space-x-2">
                   <button className="text-blue-600 hover:text-blue-800">Like</button>
                   <button className="text-blue-600 hover:text-blue-800">Comment</button>
                   <button className="text-blue-600 hover:text-blue-800">Share</button>
-                </div>
+                </div>*/}
               </div>
             </div>
 
@@ -180,12 +187,12 @@ export default function Home() {
             <div className="bg-gray-50 p-6 rounded-lg">
               <div className="flex items-center mb-4">
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" 
-                  alt="Arnold Wagner" 
+                  src="/home/Arnold-C.jpg"
+                  alt="Arnold W learner" 
                   className="w-12 h-12 rounded-full mr-4"
                 />
                 <div>
-                  <h4 className="font-semibold text-gray-900">Arnold Wagner</h4>
+                  <h4 className="font-semibold text-gray-900">Arnold W</h4>
                   <p className="text-sm text-gray-600">7 decembrie 2017</p>
                 </div>
               </div>
@@ -194,11 +201,11 @@ export default function Home() {
               </p>
               <div className="flex items-center justify-between">
                 <span className="text-sm text-gray-600">Bogdan's Driving School</span>
-                <div className="flex space-x-2">
+               {/* <div className="flex space-x-2">
                   <button className="text-blue-600 hover:text-blue-800">Like</button>
                   <button className="text-blue-600 hover:text-blue-800">Comment</button>
                   <button className="text-blue-600 hover:text-blue-800">Share</button>
-                </div>
+                </div>*/}
               </div>
             </div>
           </div>
@@ -209,13 +216,21 @@ export default function Home() {
       <section className="py-16 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+           {/*} <div>
               <img 
                 src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
                 alt="Instructor and student in car" 
                 className="rounded-lg shadow-lg w-full h-96 object-cover"
               />
+            </div>*/}
+             <div>
+              <img 
+                src="/home/instructor-and-student-in-the-car.jpg"  
+                alt="Instructor and student in car" 
+                className="rounded-lg shadow-lg w-full h-96 object-cover"
+              />
             </div>
+
             <div className="text-center lg:text-left">
               <blockquote className="text-3xl md:text-4xl font-serif text-gray-900 leading-relaxed">
                 "Confidence, skills, and a smile exactly what every learner needs."

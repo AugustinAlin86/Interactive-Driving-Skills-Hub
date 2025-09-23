@@ -22,6 +22,7 @@ export default function BookSlotPage() {
               Book Your Lesson
             </h1>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+              Before committing to a full course, book your trial lesson to experience our teaching style and see if it’s the right fit for you.
               Choose your preferred date and time for your driving lesson. 
               All lessons are 90 minutes and start from £65.
             </p>
@@ -47,7 +48,7 @@ export default function BookSlotPage() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Standard Lesson</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Trial Lesson</h3>
                 <div className="text-3xl font-bold text-red-600 mb-2">£65</div>
                 <p className="text-gray-600">90-minute lesson</p>
                 <ul className="mt-4 text-sm text-gray-600 space-y-2">
@@ -62,7 +63,7 @@ export default function BookSlotPage() {
                   POPULAR
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Intensive Course</h3>
-                <div className="text-3xl font-bold text-red-600 mb-2">£300</div>
+                <div className="text-3xl font-bold text-red-600 mb-2">£400</div>
                 <p className="text-gray-600">5 lessons package</p>
                 <ul className="mt-4 text-sm text-gray-600 space-y-2">
                   <li>• Save £25 compared to individual lessons</li>

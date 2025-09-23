@@ -9,6 +9,18 @@ export default function UsefulLinksPage() {
       category: "Official Resources"
     },
     {
+      title: "Theory Test Explained",
+      description: "What You Need to Know About Theory Test",
+      url: "https://www.theorytestexplained.co.uk/dvsa-cpr-questions-explained/",
+      category: "Testing"
+    },
+     {
+      title: "Know Your Traffic signs",
+      description: "Road traffic signage in Great Britain",
+      url: "https://www.gov.uk/government/publications/know-your-traffic-signs?utm_source=gov.uk&utm_medium=website&utm_campaign=car-theory-test/",
+      category: "Testing"
+    },
+    {
       title: "DVSA Theory Test Practice",
       description: "Practice your theory test with official DVSA questions",
       url: "https://www.gov.uk/theory-test",
