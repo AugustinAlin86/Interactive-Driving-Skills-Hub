@@ -1,4 +1,5 @@
-// src/app/api/admin/bookings/route.js
+export const dynamic = "force-dynamic";
+
 import { NextResponse } from "next/server";
 import { authenticateAdmin } from "@/lib/admin/authenticateAdmin";
 import admin from "@/lib/admin/firebaseAdmin";
