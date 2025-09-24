@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { getIdToken } from "@/lib/client/clientAuthService";
-import "../admin/style/AddUserForm.css"; // ✅ Import CSS
+import "../admin/style/AddUserForm.css"; 
 
 export default function AddUserForm({ onUserCreated }) {
   const [form, setForm] = useState({
