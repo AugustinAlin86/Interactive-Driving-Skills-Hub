@@ -1,4 +1,5 @@
-// app/api/createIfNotExist/route.js
+export const dynamic = "force-dynamic";
+
 import { NextResponse } from "next/server";
 import admin from "@/lib/admin/firebaseAdmin";
 
