@@ -34,7 +34,7 @@ export async function GET(request) {
         return {
           id: doc.id,
           ...data,
-          user: userData, // attach minimal user info
+          user: userData, 
         };
       })
     );
