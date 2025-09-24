@@ -235,7 +235,7 @@ export default function About() {
             I'm flexible and will work with you to arrange lessons at a time that suits you.
           </p>
           <Link 
-            href="/calendar" 
+            href="/book-slot" 
             className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 inline-block"
           >
             Get Lesson Prices and Book
