@@ -50,7 +50,7 @@ export default function AskOpenAi({
           <strong>AI details:</strong> {aiResponse}
         </p>
       ) : (
-        // Show button if no answer yet
+        
         <button
           onClick={fetchExtraDetails}
           disabled={isLoading}

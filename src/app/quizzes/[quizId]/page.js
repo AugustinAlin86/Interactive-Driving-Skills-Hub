@@ -14,7 +14,7 @@ export default function QuizDynamicPage() {
   const [loadingQuiz, setLoadingQuiz] = useState(true);
   const [error, setError] = useState(null);
 
-  // Redirect if not logged in
+
   useEffect(() => {
     if (!loading && !user) {
       setMessage('⚠️ Please log in to access quizzes. Redirecting…');
@@ -23,7 +23,7 @@ export default function QuizDynamicPage() {
     }
   }, [user, loading, router]);
 
-  // Fetch quiz data from database
+  
   useEffect(() => {
     const fetchQuiz = async () => {
       if (!user) return;

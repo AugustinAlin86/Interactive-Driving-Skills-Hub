@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-// Hardcoded quiz data
+
 const quizzes = [
   {
     id: "quiz1",

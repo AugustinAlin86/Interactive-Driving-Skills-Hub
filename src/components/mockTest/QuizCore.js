@@ -5,6 +5,7 @@ import { db, auth } from "@/lib/client/firebaseClient";
 import { collection,getDoc,addDoc, doc, updateDoc, increment, serverTimestamp } from "firebase/firestore";
 import Link from "next/link";
 
+
 const POINTS_PER_CORRECT = 10;
 
 const initialState = {

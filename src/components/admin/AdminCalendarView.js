@@ -21,7 +21,7 @@ export default function AdminCalendarView() {
 
   const selectedDate = date.toDateString();
 
-  /* -------------------- Auth + Fetch bookings -------------------- */
+  
   useEffect(() => {
     const unsubscribe = onAuthChange(async (user) => {
       if (!user) {
@@ -53,7 +53,7 @@ export default function AdminCalendarView() {
     return () => unsubscribe();
   }, [router]);
 
-  /* -------------------- Generate time slots -------------------- */
+ 
   const generateSlots = () => {
     const slots = [];
     let start = new Date(date);
@@ -65,7 +65,7 @@ export default function AdminCalendarView() {
     return slots;
   };
 
-  /* -------------------- Merge bookings by highest status -------------------- */
+
   const rawForDate = bookings.filter((b) => b.date === selectedDate);
   const mergedByTime = rawForDate.reduce((acc, b) => {
     const t = b.time;
@@ -78,7 +78,7 @@ export default function AdminCalendarView() {
 
   const getBookingForSlot = (slot) => mergedByTime[slot] || null;
 
-  /* -------------------- API calls -------------------- */
+
   const closeSlot = async (slot) => {
     try {
       const token = await getIdToken();
@@ -117,7 +117,6 @@ export default function AdminCalendarView() {
     }
   };
 
-  /* -------------------- Render -------------------- */
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
