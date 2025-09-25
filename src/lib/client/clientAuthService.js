@@ -1,4 +1,4 @@
-// src/lib/client/clientAuthService.js
+
 "use client";
 
 import {
@@ -15,23 +15,13 @@ import {
 
 import { auth } from "@/lib/client/firebaseClient";
 
-/* -------------------------------------------------------------------------- */
-/* 🔑 PERSISTENCE HANDLING                                                    */
-/* -------------------------------------------------------------------------- */
 
-/**
- * Convert persistence mode string into Firebase persistence object.
- *
- * - "local"   → Keeps you signed in across refresh & browser restarts (recommended).
- * - "session" → Keeps you signed in across refresh, logs out when tab is closed.
- * - "memory"  → Signs out on refresh/close.
- */
 function resolvePersistence(mode = "local") {
   switch (mode) {
     case "local":
-      return browserLocalPersistence;   // ✅ best default
+      return browserLocalPersistence;   
     case "memory":
-      return inMemoryPersistence;       // ❌ avoid if you need refresh persistence
+      return inMemoryPersistence;       
     case "session":
       return browserSessionPersistence;
     default:

@@ -7,7 +7,7 @@ import "react-calendar/dist/Calendar.css";
 import Link from "next/link";
 import { onAuthChange, getIdToken } from "@/lib/client/clientAuthService";
 
-// ✅ Status priority: highest number wins if multiple bookings per slot
+
 const STATUS_PRIORITY = { accepted: 4, pending: 3, closed: 2, refused: 1, available: 0 };
 
 export default function AdminCalendarView() {

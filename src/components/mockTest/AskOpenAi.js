@@ -1,4 +1,4 @@
-// AskOpenAi.js
+
 'use client';
 
 import { useState, useRef } from 'react';
@@ -9,29 +9,29 @@ export default function AskOpenAi({
   presetMessage = "Quick answer: Tap for more details.", 
   buttonLabel = "More details (AI)"
 }) {
-  const [aiResponse, setAiResponse] = useState('');           // The detailed answer from AI
-  const [isLoading, setIsLoading] = useState(false);          // Loading state for button
-  const hasFetchedExtraDetails = useRef(false);               // Tracks if we already fetched extra details
+  const [aiResponse, setAiResponse] = useState('');         
+  const [isLoading, setIsLoading] = useState(false);          
+  const hasFetchedExtraDetails = useRef(false);               
 
-  // Function to fetch extra AI details
+  
   const fetchExtraDetails = async () => {
-    // Prevent duplicate requests
+    
     if (hasFetchedExtraDetails.current) return;
 
-    // Prepare the question from prompt
+    
     let cleanedQuestion = '';
     if (prompt) {
-      cleanedQuestion = prompt.trim(); // Remove extra spaces
+      cleanedQuestion = prompt.trim(); 
     }
 
-    // Skip if question is empty
+   
     if (cleanedQuestion === '') return;
 
     setIsLoading(true);
     try {
       const response = await axios.post('/api/ask-chatgpt', { question: cleanedQuestion });
       setAiResponse(response.data?.answer || 'No extra details available.');
-      hasFetchedExtraDetails.current = true; // Mark as fetched
+      hasFetchedExtraDetails.current = true; 
     } catch {
       setAiResponse('Error getting extra details from AI.');
     } finally {
@@ -45,7 +45,7 @@ export default function AskOpenAi({
       <p>{presetMessage}</p>
 
       {aiResponse ? (
-        // Show AI answer if we have it
+        
         <p style={{ marginTop: 8 }}>
           <strong>AI details:</strong> {aiResponse}
         </p>

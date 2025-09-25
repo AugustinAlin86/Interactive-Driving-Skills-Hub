@@ -10,9 +10,8 @@ import {
   getDocs,
 } from "firebase/firestore";
 
-/**
- * ✅ Create a new booking for the logged-in user
- */
+
+ 
 export async function createBooking(slot, date, carType, specialRequest = "") {
   const user = auth.currentUser;
   if (!user) throw new Error("Not authenticated");
@@ -23,7 +22,7 @@ export async function createBooking(slot, date, carType, specialRequest = "") {
     time: slot,
     carType,
     specialRequest,
-    status: "pending", // always pending first
+    status: "pending", 
     createdAt: serverTimestamp(),
   };
 
@@ -39,10 +38,7 @@ export async function createBooking(slot, date, carType, specialRequest = "") {
   }
 }
 
-/**
- * ✅ Fetch all bookings for a specific date
- * Used to check availability (both user and admin can use this)
- */
+
 export async function showTakenSlots(date) {
   const q = query(
     collection(db, "bookings"),

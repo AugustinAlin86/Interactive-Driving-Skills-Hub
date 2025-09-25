@@ -13,21 +13,7 @@ export default function Header() {
       {/* Top Contact Bar */}
       <div className="bg-red-600 text-white py-2 px-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
-          {/*<div className="flex items-center space-x-4">
-            <span className="flex items-center">
-              <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-              </svg>
-              +447747531404
-            </span>
-            <span className="flex items-center">
-              <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-              </svg>
-              bogdancirsan23@gmail.com
-            </span>
-          </div>*/}
+         
                     <div className="flex flex-col sm:flex-row items-center sm:space-x-4 space-y-2 sm:space-y-0 text-center sm:text-left">
             <a href="tel:+447747531404" className="flex items-center hover:text-blue-600">
               <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
@@ -82,17 +68,7 @@ export default function Header() {
               <Link href="/" className="flex-shrink-0">
                 <img src="/logo.png" alt="Bogdan's Driving School" className="h-16 w-auto hover:opacity-80 transition-opacity duration-200" />
               </Link>
-              {/* <div className="hidden md:block">
-                <h1 className="text-2xl font-bold text-gray-900">BOGDAN'S</h1>
-                <p className="text-lg text-gray-700 font-serif">Driving School</p>
-                <div className="flex items-center mt-1">
-                  <div className="flex space-x-1">
-                    <div className="w-3 h-3 bg-red-600 rounded-full"></div>
-                    <div className="w-3 h-3 bg-red-600 rounded-full"></div>
-                  </div>
-                  <span className="ml-2 text-sm text-gray-600">07747 531404</span>
-                </div>
-              </div> */}
+              
             </div>
 
             {/* Desktop Navigation */}

@@ -9,7 +9,7 @@ import { useUserStatus } from "@/hooks/useUserStatus";
 
 export default function UserBooking() {
   const router = useRouter();
-  const { user, loading } = useUserStatus(); // 🔑 get user state
+  const { user, loading } = useUserStatus(); 
   const [date, setDate] = useState(new Date());
   const [selectedSlot, setSelectedSlot] = useState(null);
   const [carType, setCarType] = useState("manual");
@@ -26,7 +26,7 @@ export default function UserBooking() {
     }
   }, [user, loading, router]);
 
-  // Generate slots every 1h30m between 9:00–18:00
+ 
   const generateSlots = () => {
     const slots = [];
     let start = new Date(date);
@@ -44,7 +44,7 @@ export default function UserBooking() {
     return slots;
   };
 
-  // ✅ Fetch slots (only if logged in)
+  
   useEffect(() => {
     if (!user) return;
     const fetchSlots = async () => {
@@ -58,7 +58,7 @@ export default function UserBooking() {
     fetchSlots();
   }, [date, user]);
 
-  // ✅ Handle booking
+  
   const handleBooking = async () => {
     if (!selectedSlot) {
       setMessage("⚠️ Please select a slot");
@@ -83,11 +83,11 @@ export default function UserBooking() {
     }
   };
 
-  if (loading) return <p>Loading...</p>; // ⏳ wait for hook to resolve
+  if (loading) return <p>Loading...</p>; 
 
   return (
     <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
-      {/* 🔔 Show messages on top */}
+      {/* Show messages on top */}
       {message && (
         <div
           style={{

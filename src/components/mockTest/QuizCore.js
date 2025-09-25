@@ -14,7 +14,7 @@ const initialState = {
   showExplanation: false,
   finished: false,
   score: 0,
-  answers: [], // Store all answers for review
+  answers: [],
   showReview: false,
 };
 
@@ -65,7 +65,7 @@ export default function QuizCore({ questions, quizId }) {
   const [state, dispatch] = useReducer(reducer, initialState);
   const question = questions[state.current];
 
-  // Save results to Firestore when quiz is finished
+  
   useEffect(() => {
     if (state.finished && !state.showReview) {
      const saveResult = async () => {

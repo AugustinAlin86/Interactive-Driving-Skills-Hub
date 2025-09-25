@@ -26,7 +26,7 @@ export default function UserBookings() {
         return;
       }
 
-      // Use simple query without orderBy to avoid index requirement
+      
       const q = query(
         collection(db, "bookings"), 
         where("uid", "==", user.uid)
@@ -39,13 +39,13 @@ export default function UserBookings() {
         ...doc.data(),
       }));
 
-      // Sort by createdAt on client side (newest first)
+      
       if (data.length > 0) {
         data.sort((a, b) => {
-          // Handle both server timestamps and regular dates
+          
           const aTime = a.createdAt?.toDate ? a.createdAt.toDate() : new Date(a.createdAt || 0);
           const bTime = b.createdAt?.toDate ? b.createdAt.toDate() : new Date(b.createdAt || 0);
-          return bTime - aTime; // Descending order (newest first)
+          return bTime - aTime; 
         });
       }
 

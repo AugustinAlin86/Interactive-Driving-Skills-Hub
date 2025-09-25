@@ -3,9 +3,9 @@
  */
 
 /**
- * Converts various Firebase timestamp formats to a JavaScript Date object
- * @param {any} timestamp - Firebase timestamp (can be various formats)
- * @returns {Date|null} - JavaScript Date object or null if invalid
+ 
+ * @param {any} 
+ * @returns {Date|null} - 
  */
 export function convertFirestoreTimestamp(timestamp) {
   if (!timestamp) return null;
@@ -13,16 +13,16 @@ export function convertFirestoreTimestamp(timestamp) {
   let date;
   
   if (timestamp.seconds) {
-    // Standard Firestore timestamp format
+    
     date = new Date(timestamp.seconds * 1000);
   } else if (timestamp._seconds) {
-    // Alternative Firestore timestamp format
+    
     date = new Date(timestamp._seconds * 1000);
   } else if (typeof timestamp === 'string') {
-    // ISO string format
+
     date = new Date(timestamp);
   } else if (typeof timestamp === 'number') {
-    // Unix timestamp (in milliseconds)
+    
     date = new Date(timestamp);
   } else {
     return null;

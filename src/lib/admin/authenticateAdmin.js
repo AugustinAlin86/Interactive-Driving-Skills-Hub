@@ -18,12 +18,12 @@ export async function authenticateAdmin(request) {
       return null;
     }
 
-    // 2. Verify token with Firebase Admin SDK
+    
     const decoded = await admin.auth().verifyIdToken(token);
 
-    // 3. Check admin custom claim
+    
     if (decoded.admin === true) {
-      return decoded; // ✅ authenticated admin
+      return decoded; 
     }
 
   
