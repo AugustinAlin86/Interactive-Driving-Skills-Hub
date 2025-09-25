@@ -4,12 +4,12 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-import { showTakenSlots, createBooking } from "@/lib/client/slotService";
-import { useUserStatus } from "@/hooks/useUserStatus"; 
+import {showTakenSlots,createBooking,generateTimeSlots,} from "@/lib/client/slotService";
+import { useUserStatus } from "@/hooks/useUserStatus";
 
 export default function UserBooking() {
   const router = useRouter();
-  const { user, loading } = useUserStatus(); 
+  const { user, loading } = useUserStatus();
   const [date, setDate] = useState(new Date());
   const [selectedSlot, setSelectedSlot] = useState(null);
   const [carType, setCarType] = useState("manual");
@@ -18,7 +18,7 @@ export default function UserBooking() {
   const [message, setMessage] = useState("");
   const [saving, setSaving] = useState(false);
 
-  // 🔔 Redirect if not logged in
+  /** -------------------- Redirect if Not Logged In -------------------- */
   useEffect(() => {
     if (!loading && !user) {
       setMessage("⚠️ Please log in to use this service. Redirecting…");
@@ -26,25 +26,7 @@ export default function UserBooking() {
     }
   }, [user, loading, router]);
 
- 
-  const generateSlots = () => {
-    const slots = [];
-    let start = new Date(date);
-    start.setHours(9, 0, 0, 0);
-    for (let i = 0; i < 6; i++) {
-      const end = new Date(start.getTime() + 90 * 60000);
-      slots.push(
-        `${start.getHours().toString().padStart(2, "0")}:${start
-          .getMinutes()
-          .toString()
-          .padStart(2, "0")}`
-      );
-      start = end;
-    }
-    return slots;
-  };
-
-  
+  {/* Fetch Booked Slots*/}
   useEffect(() => {
     if (!user) return;
     const fetchSlots = async () => {
@@ -58,16 +40,10 @@ export default function UserBooking() {
     fetchSlots();
   }, [date, user]);
 
-  
+  {/*Handle Booking */}
   const handleBooking = async () => {
-    if (!selectedSlot) {
-      setMessage("⚠️ Please select a slot");
-      return;
-    }
-    if (!user) {
-      setMessage("⚠️ You must be logged in to book");
-      return;
-    }
+    if (!selectedSlot) return setMessage("⚠️ Please select a slot");
+    if (!user) return setMessage("⚠️ You must be logged in to book");
 
     setSaving(true);
     try {
@@ -83,11 +59,11 @@ export default function UserBooking() {
     }
   };
 
-  if (loading) return <p>Loading...</p>; 
+  if (loading) return <p>Loading...</p>;
 
+  {/* Render */}
   return (
     <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
-      {/* Show messages on top */}
       {message && (
         <div
           style={{
@@ -107,12 +83,11 @@ export default function UserBooking() {
       )}
 
       <h2>📅 Book Your Lesson</h2>
-
       <Calendar onChange={setDate} value={date} />
 
       <h3 style={{ marginTop: "15px" }}>Available Slots</h3>
       <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginTop: "10px" }}>
-        {generateSlots().map((slot) => {
+        {generateTimeSlots(date).map((slot) => {
           const isBooked = bookingsForDate.some(
             (b) =>
               b.time === slot &&
@@ -143,7 +118,7 @@ export default function UserBooking() {
         })}
       </div>
 
-      {/* Car type */}
+      {/* Car Type */}
       <div style={{ marginTop: "15px" }}>
         <label>Car type: </label>
         <select
@@ -161,7 +136,7 @@ export default function UserBooking() {
         </select>
       </div>
 
-      {/* Special request */}
+      {/* Special Request */}
       <div style={{ marginTop: "15px" }}>
         <label>Any special request for your lesson?</label>
         <textarea
