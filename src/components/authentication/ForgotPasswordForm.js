@@ -21,7 +21,7 @@ export default function ForgotPasswordForm() {
       await sendResetEmail(emailInput.trim().toLowerCase());
       setSuccessMessage("✅ Password reset email sent! Redirecting to home…");
 
-      // ⏳ wait 2 sec then go home
+      
       setTimeout(() => {
         router.push("/");
       }, 2000);

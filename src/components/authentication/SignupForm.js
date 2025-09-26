@@ -25,7 +25,7 @@ const router =useRouter();
   const [success, setSuccess]     = useState("");
   const [isCreating, setIsCreating] = useState(false);
 
-  // ✅ More flexible regex for names
+  
   const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ' -]+$/;
 
   function clearMessages() {
@@ -37,7 +37,7 @@ const router =useRouter();
     e.preventDefault();
     clearMessages();
 
-    // ✅ Field checks
+    
     if (!firstName || !lastName || !dob || !email || !password || !confirmPassword || !licenceNo) {
       setError("All fields are required.");
       return;
@@ -63,7 +63,7 @@ const router =useRouter();
       return;
     }
 
-    // ✅ Date of Birth validation
+   
     const dobDate = new Date(dob);
     if (isNaN(dobDate.getTime())) {
       setError("Invalid date of birth.");
@@ -72,7 +72,7 @@ const router =useRouter();
 
     const today = new Date();
 
-    // Minimum age (16)
+   
     const minAgeDate = new Date(today);
     minAgeDate.setFullYear(minAgeDate.getFullYear() - 16);
     if (dobDate > minAgeDate) {
@@ -80,7 +80,7 @@ const router =useRouter();
       return;
     }
 
-    // Maximum age (120)
+  
     const maxAgeDate = new Date(today);
     maxAgeDate.setFullYear(maxAgeDate.getFullYear() - 120);
     if (dobDate < maxAgeDate) {
@@ -91,7 +91,7 @@ const router =useRouter();
     try {
       setIsCreating(true);
 
-      // ✅ Create Firebase Auth user
+      
       await createUserWithEmailAndPassword(
         auth,
         email.trim().toLowerCase(),
@@ -99,9 +99,9 @@ const router =useRouter();
       );
 
       setSuccess("Account created successfully! Redirecting");
-        // ✅ Redirect to home after short delay
+        
       setTimeout(() => {
-        router.push("/");   // go to homepage
+        router.push("/"); 
       }, 1500);
 
 
@@ -112,7 +112,7 @@ const router =useRouter();
     }
   }
 
-  // ✅ Profile overrides sent to Firestore after signup
+ 
   const profileOverrides = {
     firstName: firstName.trim(),
     lastName: lastName.trim(),
@@ -121,7 +121,7 @@ const router =useRouter();
     telephone: telephone.trim(),
   };
 
-  // ✅ Pre-calculate min/max dates for input
+  
   const today = new Date();
   const maxDate = new Date(today.getFullYear() - 16, today.getMonth(), today.getDate())
     .toISOString()

@@ -7,9 +7,7 @@ import admin from "@/lib/admin/firebaseAdmin";
 
 const firestore = admin.firestore();
 
-/* -------------------------------------------------------------------------- */
-/* 🔹 GET all bookings with user details                                      */
-/* -------------------------------------------------------------------------- */
+
 export async function GET(request) {
   const requester = await authenticateAdmin(request);
   if (!requester) {
@@ -46,9 +44,7 @@ export async function GET(request) {
   }
 }
 
-/* -------------------------------------------------------------------------- */
-/* 🔹 POST → create a closed slot (when no booking exists)                    */
-/* -------------------------------------------------------------------------- */
+
 export async function POST(request) {
   const requester = await authenticateAdmin(request);
   if (!requester) {
@@ -86,9 +82,7 @@ export async function POST(request) {
   }
 }
 
-/* -------------------------------------------------------------------------- */
-/* 🔹 PATCH → update existing booking status                                  */
-/* -------------------------------------------------------------------------- */
+
 export async function PATCH(request) {
   const requester = await authenticateAdmin(request);
   if (!requester) {

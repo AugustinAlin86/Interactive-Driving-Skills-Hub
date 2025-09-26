@@ -114,11 +114,7 @@ export default function About() {
                   alt="Bogdan Crisan - Driving Instructor" 
                   className="w-80 h-80 object-cover rounded-lg shadow-lg mx-auto"
                 />
-               {/* <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
-                  alt="Bogdan Crisan - Driving Instructor" 
-                  class="w-80 h-80 object-cover rounded-lg shadow-lg mx-auto"
-                />*/}
+              
                 <p className="text-gray-600 mt-4 italic">Bogdan Crisan - Your Driving Instructor</p>
               </div>
 
@@ -252,17 +248,7 @@ export default function About() {
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Success Stories
           </h2>
-          {/*<div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {Array.from({ length: 6 }, (_, index) => (
-              <div key={index} className="aspect-square bg-gray-200 rounded-lg overflow-hidden">
-                <img 
-                  src={`https://images.unsplash.com/photo-${1500000000000 + index * 1000000}?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80`}
-                  alt={`Successful student ${index + 1}`}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-200"
-                />
-              </div>
-            ))}
-          </div>*/}
+         
                   <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
           {[
             { src: "about//students/student1.jpg", name: "Frase D.", comment: "Passed first time!" },

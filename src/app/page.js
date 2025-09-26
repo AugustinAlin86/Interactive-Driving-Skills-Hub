@@ -216,13 +216,7 @@ export default function Home() {
       <section className="py-16 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-           {/*} <div>
-              <img 
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                alt="Instructor and student in car" 
-                className="rounded-lg shadow-lg w-full h-96 object-cover"
-              />
-            </div>*/}
+           
              <div>
               <img 
                 src="/home/instructor-and-student-in-the-car.jpg"  

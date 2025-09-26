@@ -9,19 +9,19 @@ export default function DashboardRedirectButton() {
   const { user, isAdmin, status, loading } = useUserStatus();
 
   useEffect(() => {
-    if (loading) return; // wait for hook to finish checking
+    if (loading) return; 
 
     if (!user) {
-      router.replace("/"); // 🚪 guest → back to login/home
+      router.replace("/"); 
       return;
     }
 
     if (isAdmin) {
-      router.replace("/adminDashboard"); // 👑 admin → admin dashboard
+      router.replace("/adminDashboard"); 
     } else {
-      router.replace("/"); // 👤 normal user → user dashboard
+      router.replace("/"); 
     }
   }, [user, isAdmin, loading, router]);
 
-  return null; // invisible helper
+  return null; 
 }

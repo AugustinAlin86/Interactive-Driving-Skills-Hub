@@ -4,8 +4,8 @@ import admin from "@/lib/admin/firebaseAdmin";
  * Authenticate a request as an admin.
  * Returns decoded token if admin, otherwise null.
  *
- * @param {Request} request - Incoming Next.js or Node request object
- * @returns {Promise<object|null>} - Decoded token if admin, else null
+ * @param {Request} request
+ * @returns {Promise<object|null>} 
  */
 export async function authenticateAdmin(request) {
   try {

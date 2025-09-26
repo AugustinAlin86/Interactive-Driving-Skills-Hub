@@ -13,14 +13,14 @@ export default function ContactMessages() {
   const [loadingMessages, setLoadingMessages] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
 
-  // ✅ Redirect if not admin
+ 
   useEffect(() => {
     if (!loading && (!user || !isAdmin)) {
       router.replace("/login");
     }
   }, [loading, user, isAdmin, router]);
 
-  // ✅ Fetch messages when admin confirmed
+  
   useEffect(() => {
     if (isAdmin) fetchMessages();
   }, [isAdmin]);
@@ -62,7 +62,7 @@ export default function ContactMessages() {
       });
 
       if (res.ok) {
-        fetchMessages(); // Refresh after delete
+        fetchMessages(); 
       } else {
         const data = await res.json();
         console.error("Error deleting message:", data.error);
@@ -103,7 +103,7 @@ export default function ContactMessages() {
     );
   }
 
-  if (!user || !isAdmin) return null; // Will redirect
+  if (!user || !isAdmin) return null; 
 
   return (
     <div className="min-h-screen bg-gray-50">

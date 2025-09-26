@@ -23,10 +23,10 @@ export default function GoogleLoginButton() {
 
       const user = result.user;
 
-      // ✅ Success message
+     
       setSuccess("✅ Google login successful! Redirecting to home…");
 
-      // ⏳ Redirect after 2s
+      
       setTimeout(() => {
         router.push("/");
       }, 2000);
@@ -35,7 +35,7 @@ export default function GoogleLoginButton() {
     } catch (err) {
       console.error("Google login failed:", err);
 
-      // 🔑 Friendly error messages
+      
       if (
         err.code === "auth/account-exists-with-different-credential" ||
         err.code === "auth/user-not-found"

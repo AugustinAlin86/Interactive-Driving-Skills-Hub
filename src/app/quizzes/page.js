@@ -56,7 +56,7 @@ export default function QuizzesPage() {
   }
 
   if (!user) {
-    return null; // Will redirect
+    return null; 
   }
 
   return (

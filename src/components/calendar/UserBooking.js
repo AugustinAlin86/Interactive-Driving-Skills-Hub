@@ -18,7 +18,7 @@ export default function UserBooking() {
   const [message, setMessage] = useState("");
   const [saving, setSaving] = useState(false);
 
-  /** -------------------- Redirect if Not Logged In -------------------- */
+  
   useEffect(() => {
     if (!loading && !user) {
       setMessage("⚠️ Please log in to use this service. Redirecting…");

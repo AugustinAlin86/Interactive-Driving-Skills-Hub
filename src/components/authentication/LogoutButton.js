@@ -9,7 +9,7 @@ export default function LogoutButton({ style }) {
   async function handleLogout() {
     try {
       await signOut();
-      router.replace("/"); // Redirect after logout
+      router.replace("/"); 
     } catch (err) {
       console.error("Logout failed:", err);
     }
@@ -26,7 +26,7 @@ export default function LogoutButton({ style }) {
         borderRadius: "6px",
         padding: "6px 12px",
         cursor: "pointer",
-        ...style, // allow custom styles from parent
+        ...style,
       }}
     >
       Log Out

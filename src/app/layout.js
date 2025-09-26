@@ -47,7 +47,7 @@ export const metadata = {
     images: ["https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"],
   },
   verification: {
-    google: "your-google-verification-code", // Replace with actual verification code
+    google: "your-google-verification-code", 
   },
 };
 
@@ -60,8 +60,7 @@ export default function RootLayout({ children }) {
           {children}
         </main>
         <Footer />
-        {/* <GlobalBadge />  */}
-        {/* ✅ Badge now visible on all pages */}
+    
       </body>
     </html>
   );

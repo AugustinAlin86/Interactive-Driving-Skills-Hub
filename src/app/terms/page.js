@@ -1,4 +1,4 @@
-// src/app/terms/page.js
+
 "use client";
 
 export default function TermsPage() {

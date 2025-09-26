@@ -10,7 +10,7 @@ export default function UserDropdown() {
   const dropdownRef = useRef(null);
   const { user, isAdmin, loading } = useUserStatus();
 
-  // Close dropdown when clicking outside
+  
   useEffect(() => {
     function handleClickOutside(event) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -24,12 +24,12 @@ export default function UserDropdown() {
     };
   }, []);
 
-  // Don't render if loading or no user
+ 
   if (loading || !user) {
     return null;
   }
 
-  // Get display name - prefer displayName, then firstName, then email
+ 
   const displayName = user.displayName || 
                      (user.firstName ? `${user.firstName} ${user.lastName || ''}`.trim() : '') ||
                      user.email?.split('@')[0] ||

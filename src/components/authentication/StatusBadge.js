@@ -9,10 +9,10 @@ import LogoutButton from "./LogoutButton";
 
 export default function StatusBadge() {
   const router = useRouter();
-  const { user, isAdmin, loading } = useUserStatus(); // realtime client hook
+  const { user, isAdmin, loading } = useUserStatus();
   const [verifiedRole, setVerifiedRole] = useState(null);
 
-  // 🔑 Double-check with backend when user changes
+  
   useEffect(() => {
     const verifyWithServer = async () => {
       if (!user) {
@@ -30,7 +30,7 @@ export default function StatusBadge() {
 
         const data = await res.json();
         if (data.success) {
-          setVerifiedRole(data.role); // "admin" | "user"
+          setVerifiedRole(data.role);
         } else {
           setVerifiedRole(null);
         }
@@ -41,7 +41,7 @@ export default function StatusBadge() {
     };
 
     verifyWithServer();
-  }, [user]); // re-check whenever login state changes
+  }, [user]); 
 
   const handleDashboardRedirect = () => {
     if (verifiedRole === "admin") {
@@ -53,7 +53,7 @@ export default function StatusBadge() {
     }
   };
 
-  if (loading) return null; // wait until client hook resolves
+  if (loading) return null; 
 
   return (
     <div
@@ -98,7 +98,7 @@ export default function StatusBadge() {
         Go to Dashboard
       </button>
 
-      {user && <LogoutButton style={{ marginTop: 0 }} />} {/* ✅ no duplicate */}
+      {user && <LogoutButton style={{ marginTop: 0 }} />} 
     </div>
   );
 }
